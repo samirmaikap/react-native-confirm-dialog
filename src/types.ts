@@ -16,6 +16,8 @@ interface Options {
 
   body?: string;
   bodyStyle?: TextStyle;
+  
+  modalStyle?: any;
 
   // Buttons styling override
   buttonProps?: any;
