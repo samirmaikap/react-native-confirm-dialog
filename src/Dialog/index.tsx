@@ -20,7 +20,7 @@ const Index = ({
   dismiss,
 }: Props): JSX.Element => {
   const {
-    theme, open, title, subtitle, body, titleStyle, subtitleStyle, bodyStyle, dismissOnOutsideClick
+    theme, open, title, subtitle, body, titleStyle, subtitleStyle, bodyStyle, dismissOnOutsideClick, modalStyle
   } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
@@ -34,7 +34,7 @@ const Index = ({
       <TouchableWithoutFeedback onPress={ dismissOnOutsideClick ? dismiss : noopFn }>
         <View style={ styles.centeredView }>
           <TouchableWithoutFeedback>
-            <View style={ styles.modalView }>
+            <View style={ [styles.modalView, ...modalStyle] }>
               <Text style={ [styles.title, titleStyle] }>
                 {title}
               </Text>
